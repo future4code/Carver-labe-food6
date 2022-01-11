@@ -49,14 +49,17 @@ input{
 }
 `
 export const ButtonForm = styled.div`
-  min-width: 328px;
+  min-width: 360px;
   min-height: 42px;
+  display: flex;
+  justify-content: center;
+  
+  button{
+  width: 328px;
+  height: 42px;
+  text-align: center;
   border-radius: 2px;
   background-color: #e8222e;
-  button{
-  min-width: 296px;
-  min-height: 18px;
-  text-align: center;
   }
 `
 

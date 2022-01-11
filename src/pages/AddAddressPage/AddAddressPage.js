@@ -1,10 +1,13 @@
 import React from "react";
 import {ScreenContainer, ButtonForm} from "./styled"
 import useForm from "../../hooks/useForm";
+import { AddAddress } from "../../hooks/useRequest";
+import { useHistory } from "react-router-dom";
 // import {ScreenContainer, ButtonForm} from "./Styled"
 
 
 const AddAddressPage = () => {
+        const history = useHistory()
   
        
         const [form, handleInputChange] = useForm({
@@ -18,7 +21,7 @@ const AddAddressPage = () => {
       
         const sendForm = (event) => {     
             event.preventDefault();
-        //     signUp(form, history)     
+            AddAddress(form, history)     
         };
       
       return(
@@ -84,7 +87,7 @@ const AddAddressPage = () => {
               <input
                 placeholder={"Cidade"}
                 type={"text"}
-                name={"Cidade"}
+                name={"city"}
                 value={form.city}
                 onChange={handleInputChange}
                 required
@@ -97,7 +100,7 @@ const AddAddressPage = () => {
               <input
                 placeholder={"Estado"}
                 type={"text"}
-                name={"Estado"}
+                name={"state"}
                 value={form.state}
                 onChange={handleInputChange}
                 required

@@ -42,9 +42,9 @@ const LoginForm = () => {
         </fieldset>
         {/* </InputContainer> */}
 
-        <SendButtonContainer>
+        {/* <SendButtonContainer> */}
           <SendButton type={"submit"}>Entrar</SendButton>
-        </SendButtonContainer>
+        {/* </SendButtonContainer> */}
 
       </Form>
 

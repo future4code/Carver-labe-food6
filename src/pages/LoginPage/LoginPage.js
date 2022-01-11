@@ -11,14 +11,14 @@ const LoginPage = () => {
     <ScreenContainer>
       <LogoImage src={Logo} alt="Logo FourFood" />
       <p>Entrar</p>
+
       <LoginForm />
+
       <SignUpContainer>
         <ClickToSignUp>
           <span>Não possui conta? </span><span onClick={() => goToSignUp(history)}>Clique aqui.</span>
         </ClickToSignUp>
-      </SignUpContainer>
-
-      
+      </SignUpContainer>   
 
     </ScreenContainer>
   );
