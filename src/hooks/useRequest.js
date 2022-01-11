@@ -53,6 +53,28 @@ import { goToAddress, goToHome } from "../routes/coordinator";
             });
     };
 
+   export const AddAddress = (body, history) => {
+
+        axios
+            .put(`${BASE_URL}/address`, body, 
+                {headers: {
+                    auth: localStorage.getItem("token"),
+                    contentType: "application/json"
+                }
+            }
+            )
+            .then((response) => {
+                localStorage.setItem('token', response.data.token)
+                alert("Cadastro realizado com sucesso!")
+                goToHome(history)
+
+            })
+            .catch((error) => {
+                alert(error)
+ 
+            });
+    };
+
 
 //     return [data, Login]
 
