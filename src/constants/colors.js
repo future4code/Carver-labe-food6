@@ -1,2 +1,3 @@
-export const primaryColor = "#e8222e";
-export const neutralColor = "rgba (232, 34, 46, 0,5)";
+export const primaryColor = "#E8222E";
+export const secondaryColor = "#B8B8B8"
+export const neutralColor = "#000000";

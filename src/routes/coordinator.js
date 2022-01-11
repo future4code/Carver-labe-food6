@@ -21,3 +21,7 @@ export const goToProfile = (history) => {
 export const goToCart = (history) => {
     history.push("/cart")
 };
+
+export const goToAddress = (history) => {
+    history.push("/address")
+};

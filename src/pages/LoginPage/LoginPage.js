@@ -1,27 +1,26 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import logo2x from "../../assets/logo2x.png";
+import Logo from '../../assets/img/logo-4Future.png';
 import { goToSignUp } from "../../routes/coordinator";
 import LoginForm from "./LoginForm";
-
+import { ScreenContainer, LogoImage, SignUpContainer, ClickToSignUp } from "./styled";
 
 const LoginPage = () => {
   const history = useHistory();
   return (
-    <div>
-      <img src={logo2x} alt="Logo FourFood" />
+    <ScreenContainer>
+      <LogoImage src={Logo} alt="Logo FourFood" />
+      <p>Entrar</p>
       <LoginForm />
-      <button
-        onClick={() => goToSignUp(history)}
-        type={"submit"}
-        fullWidth
-        variant={"text"}
-        color={"primary"}
-      >
-        Não possui conta? Cadastre-se
-      </button>
-    </div>
+      <SignUpContainer>
+        <ClickToSignUp>
+          <span>Não possui conta? </span><span onClick={() => goToSignUp(history)}>Clique aqui.</span>
+        </ClickToSignUp>
+      </SignUpContainer>
+
+    </ScreenContainer>
   );
 };
 
 export default LoginPage;
+

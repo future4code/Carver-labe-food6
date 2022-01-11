@@ -2,11 +2,12 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage/HomePage";
 import LoginPage from "../pages/LoginPage/LoginPage";
-import SingUpPage from "../pages/SingUpPage/SingUpPage";
+import SignUpPage from "../pages/SignUpPage/SignUpPage"
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import RestaurantsPage from "../pages/RestaurantsPage/RestaurantsPage";
 import CartPage from "../pages/CartPage/CartPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import AddAddressPage from "../pages/AddAddressPage/AddAddressPage";
 
 const Router = () => {
     return (
@@ -21,7 +22,7 @@ const Router = () => {
                 </Route>
 
                 <Route exact path="/signUp">
-                    <SingUpPage />
+                    <SignUpPage />
                 </Route>
                 
                 <Route exact path="/profile">
@@ -34,6 +35,10 @@ const Router = () => {
 
                 <Route exact path="/cart">
                     <CartPage />
+                </Route>
+
+                <Route exact path="/address">
+                    <AddAddressPage />
                 </Route>
                 
                 <Route>
