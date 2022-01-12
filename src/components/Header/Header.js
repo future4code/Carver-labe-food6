@@ -1,10 +1,10 @@
 import React from "react";
+import { Head } from "./styled";
 
 const Header = () => {
     return (
-        <div>
-            Header
-        </div>
+        <Head>
+        </Head>
     )
 };
 
