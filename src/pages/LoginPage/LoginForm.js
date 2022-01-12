@@ -32,7 +32,7 @@ const LoginForm = () => {
 
         <fieldset><legend>Senha*</legend>
           <InputPassword
-            placeholder={"Minimo 6 caracteres"}
+            placeholder={"Mínimo 6 caracteres"}
             type={"password"}
             name={"password"}
             value={form.password}
