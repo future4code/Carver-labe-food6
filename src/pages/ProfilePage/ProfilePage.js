@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import Header from "../../components/Header/Header";
 import GlobalContext from '../../Global/GlobalContext'
 import { GetProfile, UseOrderHitory, UseRequestProf } from "../../hooks/useRequest";
 
@@ -25,7 +26,7 @@ const ProfilePage = () => {
        let result = dateTime.toLocaleString('pt', options)
 
         return (
-            <div>
+            <div>                
                 <p>{order.restaurantName}</p>
                 <p>{order.totalPrice}</p>
                 <p>{result}</p>
@@ -38,7 +39,7 @@ const ProfilePage = () => {
 
     return (
         <div>
-
+            <Header>Meu Perfil</Header>
             <p>{prof.name}</p>
             <p>{prof.email}</p>
             <p>{prof.cpf}</p>

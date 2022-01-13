@@ -3,6 +3,7 @@ import GlobalContext from "../../Global/GlobalContext";
 import CartCard from "../../components/CartCard/CartCard"
 import { PlaceOrder } from "../../hooks/useRequest";
 import { useHistory } from "react-router-dom";
+import Header from "../../components/Header/Header";
 
 const CartPage = () => {
     const { restaurantList, setReastaurantList, restName, setRestName, cart, setCart, restId, setRestId, orderActive, setOrderActive } = useContext(GlobalContext)
@@ -56,6 +57,7 @@ const CartPage = () => {
 
 return (
     <div>
+        <Header>Carrinho</Header>
         {cartList}
         <p>Total: {valorTotal()}</p>
 

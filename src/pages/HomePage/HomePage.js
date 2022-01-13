@@ -3,10 +3,10 @@ import { useState } from "react";
 import RestaurantCard from "../../components/RestaurantCard/RestaurantCard";
 import GlobalContext from "../../Global/GlobalContext";
 import { ContainerPrincipal} from "./Styled";
-import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import {NavScroll} from "./Styled";
 import Footer from "../../components/Footer/Footer";
 import { FooterSpace } from "./Styled";
+import Header from "../../components/Header/Header";
 
 const HomePage = () => {
     const { cont, setCont } = useState(false)
@@ -83,6 +83,7 @@ const HomePage = () => {
 
     return (
         <ContainerPrincipal>
+            <Header><p>Ifuture</p></Header>
             <input
                 placeholder={"Restaurante"}
                 value={search}

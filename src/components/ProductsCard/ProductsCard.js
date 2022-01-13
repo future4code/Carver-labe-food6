@@ -72,7 +72,7 @@ const ProductsCard = (props) => {
     
     return (
         <ContainerPrincipal>
-            <img  src={props.photoUrl}/>
+            <img  src={props.photoUrl} alt=""/>
                        
             <p class="titulo">{props.name}</p>
 

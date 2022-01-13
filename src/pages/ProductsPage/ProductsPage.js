@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
+import Header from "../../components/Header/Header";
 import ProductsCard from "../../components/ProductsCard/ProductsCard";
 import GlobalContext from "../../Global/GlobalContext";
 
@@ -35,6 +36,7 @@ const ProductsPage = () => {
 
     return (
         <div>
+            <Header><p>Produtos</p></Header>
             {product}
         </div>
 
