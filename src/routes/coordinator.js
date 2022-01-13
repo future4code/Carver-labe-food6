@@ -10,8 +10,8 @@ export const goToHome = (history) => {
     history.push("/")
 };
 
-export const goToRestaurant = (history, restaurantId) => {
-    history.push(`/restaurants/${restaurantId}`)
+export const goToRestaurant = (history) => {
+    history.push(`/restaurants`)
 };
 
 export const goToProfile = (history) => {
@@ -24,4 +24,7 @@ export const goToCart = (history) => {
 
 export const goToAddress = (history) => {
     history.push("/address")
+};
+export const goToProducts = (history, id) => {
+    history.push(`/restaurants/${id}`)
 };

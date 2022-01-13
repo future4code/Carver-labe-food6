@@ -8,6 +8,7 @@ import RestaurantsPage from "../pages/RestaurantsPage/RestaurantsPage";
 import CartPage from "../pages/CartPage/CartPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AddAddressPage from "../pages/AddAddressPage/AddAddressPage";
+import ProductsPage from "../pages/ProductsPage/ProductsPage";
 
 const Router = () => {
     return (
@@ -29,8 +30,11 @@ const Router = () => {
                     <ProfilePage />
                 </Route>
 
-                <Route exact path="/restaurants/:restaurantId">
+                <Route exact path="/restaurants">
                     <RestaurantsPage />
+                </Route>
+                <Route exact path="/restaurants/:id">
+                    <ProductsPage />
                 </Route>
 
                 <Route exact path="/cart">

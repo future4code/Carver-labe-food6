@@ -6,6 +6,21 @@ import { BASE_URL } from "../constants/urls";
 const GlobalState = (props) => {
     const [restName, setRestName] = useState([])
     const [restaurantList, setReastaurantList] = useState([])
+    const [cart, setCart] = useState([])
+    const [restId, setRestId] = useState(0)
+    const [orderActive, setOrderActive] = useState(false)
+    const [userProfile, setUserProfile] = useState({})
+
+    useEffect(()=>{
+        const data = localStorage.getItem('cart')
+        if (data){
+          setCart(JSON.parse(data))
+        }
+      }, [])
+    
+      useEffect(()=>{
+        localStorage.setItem('cart', JSON.stringify(cart))
+      },[cart, restaurantList])
     
 
 
@@ -38,7 +53,7 @@ const GlobalState = (props) => {
                     }
 
                     
-                    console.log(response.data.restaurant)
+                   
                 })
                 .catch((error)=> console.log("deu ruim"))
         })
@@ -59,7 +74,7 @@ const GlobalState = (props) => {
             )
             .then((response) => {
                 setRestName(response.data.restaurants)
-                console.log("rodou")
+                
             })
             .catch((error) => console.log("deu ruim"))
     }
@@ -69,6 +84,12 @@ const GlobalState = (props) => {
         setRestName,
         restaurantList,
         setReastaurantList,
+        cart,
+        setCart,
+        restId,
+        setRestId,
+        userProfile, 
+        setUserProfile
     }
 
     return (

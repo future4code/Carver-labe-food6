@@ -5,18 +5,21 @@ import GlobalContext from "../../Global/GlobalContext";
 import { ContainerPrincipal} from "./Styled";
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import {NavScroll} from "./Styled";
+import Footer from "../../components/Footer/Footer";
+import { FooterSpace } from "./Styled";
 
 const HomePage = () => {
     const { cont, setCont } = useState(false)
-    const { restaurantList, setReastaurantList, restName, setRestName } = useContext(GlobalContext)
+    const { restaurantList, setReastaurantList, restName, setRestName, cart, setCart } = useContext(GlobalContext)
 
     const newList = restaurantList
 
     const [search, setSearch] = useState("")
     const [category, setCategory] = useState("")
+    const restList = restaurantList
 
 
-    const list = restaurantList
+    const list = restList
         .filter(restaurant => {
             return restaurant.name.toLowerCase().includes(search.toLowerCase())
         })
@@ -103,6 +106,8 @@ const HomePage = () => {
             {/* </div> */}
 
             {restaurantList.length === 10 ? list : "Loading..."}
+            <FooterSpace/>
+            <Footer/>
         </ContainerPrincipal>
     )
 };
