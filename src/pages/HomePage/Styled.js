@@ -5,10 +5,36 @@ export const ContainerPrincipal = styled.div`
 display: flex;
 flex-direction: column;
 gap: 5px;
+align-items: center;
+justify-content: center;
 
-    .scroll{
-        width: 100vw;
-        height: 30px;
-        overflow-x: scroll;
-    }
+input{
+  width: 328px;
+  height: 56px;
+  border-radius: 2px;
+  border: solid 1px #b8b8b8;
+}
+
 `
+
+export const NavScroll = styled.div`
+    background-color: white;
+    overflow: auto;
+    white-space: nowrap;
+    width: 360px;
+    height: 42px;
+  
+  button {
+    display: inline-block;
+    width: 87px;
+    height: 18px;
+    text-align: center;
+    border: none;
+    background-color: white;
+  } 
+
+  button:active{
+      color: #e8222e;
+  }
+
+  `
