@@ -17,6 +17,12 @@ input{
 
 `
 
+export const FooterSpace = styled.div`
+  min-width: 360px;
+  width: 100%;
+  height: 49px;
+`
+
 export const NavScroll = styled.div`
     background-color: white;
     overflow: auto;
