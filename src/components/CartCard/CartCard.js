@@ -14,7 +14,7 @@ const CartCard = (props) => {
 
 
         let onCart = false
-        console.log(id)
+        
         for (let prod of cart) {
             if (id === prod.id) {
                 onCart = true
@@ -54,10 +54,6 @@ const CartCard = (props) => {
         setCart(newCart)
     }
 
-
-
-    
-
     return (
         <div>
 
@@ -66,7 +62,7 @@ const CartCard = (props) => {
 
             <p>{props.name}</p>
             <p>{props.quantity}</p>
-            <p>R${props.price},00</p>
+            <p>R${props.price}</p>
 
             <button onClick={() => AddProduct(props.id)}>adicionar</button>
             <button onClick={() => RemoveProduct(props.id)}>Remover</button>

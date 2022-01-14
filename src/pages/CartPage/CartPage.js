@@ -58,17 +58,13 @@ const CartPage = () => {
             
             PlaceOrder(products, restId, history, setCart, setOrderActive, payment)
 
-            
-                 
                        
         }
 
         const money = "money"
         const card = "creditcard"
         
-        // useEffect(()=>{
-        //     setPayment()
-        // }, [payment])
+        
         const update = () =>{
 
         }
@@ -77,7 +73,6 @@ const CartPage = () => {
             setCardCheck(false)
             setMoneyCheck(true)
             setPayment(money)
-            // setStatePayment()
             update()
             
         }

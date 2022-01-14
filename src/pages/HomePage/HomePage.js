@@ -8,11 +8,13 @@ import {NavScroll} from "./Styled";
 import Footer from "../../components/Footer/Footer";
 import { FooterSpace } from "./Styled";
 import useProtectedPage from "../../hooks/useProtected";
+import { useRequest } from "../../hooks/useRequest";
 
 const HomePage = () => {
     useProtectedPage()
     const { cont, setCont } = useState(false)
     const { restaurantList, setReastaurantList, restName, setRestName, cart, setCart } = useContext(GlobalContext)
+    const {data, data2} = useRequest()
 
     const newList = restaurantList
 

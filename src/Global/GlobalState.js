@@ -21,67 +21,6 @@ const GlobalState = (props) => {
       useEffect(()=>{
         localStorage.setItem('cart', JSON.stringify(cart))
       },[cart, restaurantList])
-    
-
-
-    useEffect(()=>{
-        getRestaurant()
-    }, [])
-
-    useEffect(() => {
-        const newList = []
-        
-        restName.forEach((item) => {
-            axios
-                .get(`${BASE_URL}/restaurants/${item.id}`,
-                    {
-                        headers: {
-                            auth: localStorage.getItem("token"),
-                            contentType: "application/json"
-                        }
-                    }
-                )
-                .then((response)=>{
-                    const newList2 = {...response.data.restaurant}
-                    newList.push(newList2)
-                    
-                    if (newList.length === 10) {
-                        const newList3 = newList.sort((a, b) => {
-                            return a.id - b.id
-                        })
-                        setReastaurantList(newList3)
-                    }
-
-                    
-                   
-                })
-                .catch((error)=>{
-
-                })
-        })
-    }, [restName])
-
-
-
-    const getRestaurant = ()=>{
-
-        axios.
-            get(`${BASE_URL}/restaurants`,
-                {
-                    headers: {
-                        auth: localStorage.getItem("token"),
-                        contentType: "application/json"
-                    }
-                }
-            )
-            .then((response) => {
-                setRestName(response.data.restaurants)
-                
-            })
-            .catch((error)=>{
-
-            }) 
-    }
 
     const data = {
         restName, 

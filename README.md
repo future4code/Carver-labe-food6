@@ -5,7 +5,7 @@
 - Marco Raphael Dantas
 - Natalia Dias Queiroz
 
-Link do Surge: https://male-seed.surge.sh/login
+Link do Surge: https://doubtful-son.surge.sh/
 
 ## O que funciona:
 Na página de Login
