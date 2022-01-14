@@ -1,13 +1,18 @@
 import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import Header from "../../components/Header/Header";
 import ProductsCard from "../../components/ProductsCard/ProductsCard";
 import GlobalContext from "../../Global/GlobalContext";
+import useProtectedPage from "../../hooks/useProtected";
 
 const ProductsPage = () => {
+    useProtectedPage()
     const { restName, setRestName, restaurantList, setReastaurantList, cart, setCart, restId, setRestId } = useContext(GlobalContext)
     const { id } = useParams()
+    const history = useHistory()
     const list = restaurantList
-    setRestId(id)
+    
 
 
     const getProducts = list.find((item) => {
@@ -27,6 +32,7 @@ const ProductsPage = () => {
                 price={prod.price}
                 id={prod.id}
                 photoUrl={prod.photoUrl}
+                restaurantId={id}
             />
         )
     })
@@ -35,6 +41,10 @@ const ProductsPage = () => {
 
     return (
         <div>
+            <Header
+                state={5}
+                back={history.goBack}
+            />
             {product}
         </div>
 

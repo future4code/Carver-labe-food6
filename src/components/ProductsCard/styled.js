@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 export const ContainerPrincipal = styled.div`
+/* display: flex;
+flex-direction: column; */
+`
+
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,9 +55,3 @@ img{
 
 `
 
-export const Container = styled.div`
-display: flex;
-flex-direction: row;
-min-width: 328px;
-justify-content: space-evenly;
-`

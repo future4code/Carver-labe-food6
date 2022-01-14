@@ -30,7 +30,7 @@ export const Login = (body, history) => {
 
         })
         .catch((error) => {
-            alert(error)
+            
 
         });
 };
@@ -52,7 +52,7 @@ export const signUp = (body, history) => {
 
         })
         .catch((error) => {
-            alert(error)
+            
 
         });
 };
@@ -75,17 +75,42 @@ export const AddAddress = (body, history) => {
 
         })
         .catch((error) => {
-            alert(error)
+            
 
         });
 };
 
-export const PlaceOrder = (body2, id, history, setCart, setOrderActive) => {
+export const UpdateProfile = (body, history) => {
+
+    axios
+        .put(`${BASE_URL}/profile`, body,
+            {
+                headers: {
+                    auth: localStorage.getItem("token"),
+                    contentType: "application/json"
+                }
+            }
+        )
+        .then((response) => {
+            goToHome(history)
+
+        })
+        .catch((error) => {
+           
+
+        });
+};
+
+export const PlaceOrder = (body2, id, history, setCart, setOrderActive, payment) => {
 
     const body = {
         products: body2,
-        paymentMethod: "creditcard"
+        paymentMethod: payment
     }
+
+    console.log(payment)
+    console.log(id)
+    console.log(body)
 
     axios
         .post(`${BASE_URL}/restaurants/${id}/order`, body,
@@ -99,13 +124,13 @@ export const PlaceOrder = (body2, id, history, setCart, setOrderActive) => {
         .then((response) => {
             alert("Pedido realizado com sucesso!")
             goToHome(history)
-            // setCart(list)
+            setCart([])
             setOrderActive(true)
 
 
         })
         .catch((error) => {
-            alert(error)
+            
 
         });
 };

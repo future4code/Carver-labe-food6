@@ -3,6 +3,8 @@ import {ScreenContainer, ButtonForm} from "./styled"
 import useForm from "../../hooks/useForm";
 import { AddAddress } from "../../hooks/useRequest";
 import { useHistory } from "react-router-dom";
+import { goToHome } from "../../routes/coordinator";
+import Header from "../../components/Header/Header";
 // import {ScreenContainer, ButtonForm} from "./Styled"
 
 
@@ -26,6 +28,11 @@ const AddAddressPage = () => {
       
       return(
           <ScreenContainer>
+            <Header
+            state={5} 
+            back={history.goBack}
+            />
+
             {/* <img src={Logo} alt="Logo FourFood"/> */}
             <p> Meu endereço </p>
             <form onSubmit={sendForm}>
