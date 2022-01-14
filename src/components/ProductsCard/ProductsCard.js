@@ -1,17 +1,22 @@
 import React, { useContext, useState } from "react";
 import GlobalContext from "../../Global/GlobalContext";
 import { AddAddress } from "../../hooks/useRequest";
-import { ContainerPrincipal } from './styled'
+import { Container, ContainerPrincipal } from './styled'
 import PopUp from "../PopUp/PopUp";
+import Header from "../../components/Header/Header"
+import { useHistory } from "react-router-dom";
 
 const ProductsCard = (props) => {
-    const { restaurantList, setReastaurantList, restName, setRestName, cart, setCart } = useContext(GlobalContext)
+    const { restaurantList, setReastaurantList, restName, setRestName, cart, setCart, restId, setRestId } = useContext(GlobalContext)
     const { quantity, setQuantity } = useState(0)
     const [cont, setCont] = useState()
     const [popUp, setPopUp] = useState(false)
+    const history = useHistory()
 
     const AddProduct = (id, cont) => {
-
+        setRestId(props.restaurantId)
+        console.log(restId)
+        
         let onCart = false
         console.log(id)
         for (let prod of cart) {
@@ -43,20 +48,20 @@ const ProductsCard = (props) => {
         }
     }
 
-    const RemoveProduct = (id) =>{
-        const index = cart.findIndex((prodIndex)=> 
+    const RemoveProduct = (id) => {
+        const index = cart.findIndex((prodIndex) =>
             prodIndex.id === props.id
         )
         console.log(index)
         const newCart = [...cart]
         newCart.splice(index, 1)
         setCart(newCart)
-    } 
+    }
 
-    const openPopUp = () =>{
+    const openPopUp = () => {
         setPopUp(true)
     }
-    const closePopUp = () =>{
+    const closePopUp = () => {
         setPopUp(false)
     }
 
@@ -64,26 +69,33 @@ const ProductsCard = (props) => {
         setCont(val)
     }
 
-    const aux = (id, cont) =>{
+    const aux = (id, cont) => {
         AddProduct(id, cont)
-        console.log(cont)
+        
+
         openPopUp()
     }
-    
+
     return (
         <ContainerPrincipal>
-            <img  src={props.photoUrl}/>
-                       
-            <p class="titulo">{props.name}</p>
+            
+
+            <Container>
 
 
-            <p class="description">{props.description}</p>
-            <p>R${props.price}</p>
+                <img src={props.photoUrl} />
 
-            <button onClick={() => aux(props.id, cont)}>adicionar</button>
-            <button onClick={() => RemoveProduct(props.id)}>Remover</button>
+                <p class="titulo">{props.name}</p>
 
-            {popUp ? <PopUp closepopUp={closePopUp} amauntCart={amauntCart} AddProduct={AddProduct} id={props.id}/> : null}
+
+                <p class="description">{props.description}</p>
+                <p>R${props.price}</p>
+
+                <button onClick={() => aux(props.id, cont)}>adicionar</button>
+                <button onClick={() => RemoveProduct(props.id)}>Remover</button>
+
+                {popUp ? <PopUp closepopUp={closePopUp} amauntCart={amauntCart} AddProduct={AddProduct} id={props.id} /> : null}
+            </Container>
         </ContainerPrincipal>
     )
 }

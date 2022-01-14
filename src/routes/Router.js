@@ -9,6 +9,7 @@ import CartPage from "../pages/CartPage/CartPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AddAddressPage from "../pages/AddAddressPage/AddAddressPage";
 import ProductsPage from "../pages/ProductsPage/ProductsPage";
+import ProfileEdit from "../pages/ProfileEdit/ProfileEdit"
 
 const Router = () => {
     return (
@@ -28,6 +29,10 @@ const Router = () => {
                 
                 <Route exact path="/profile">
                     <ProfilePage />
+                </Route>
+
+                <Route exact path="/profile/edit">
+                    <ProfileEdit />
                 </Route>
 
                 <Route exact path="/restaurants">

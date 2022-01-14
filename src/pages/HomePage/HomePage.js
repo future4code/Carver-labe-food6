@@ -7,8 +7,10 @@ import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import {NavScroll} from "./Styled";
 import Footer from "../../components/Footer/Footer";
 import { FooterSpace } from "./Styled";
+import useProtectedPage from "../../hooks/useProtected";
 
 const HomePage = () => {
+    useProtectedPage()
     const { cont, setCont } = useState(false)
     const { restaurantList, setReastaurantList, restName, setRestName, cart, setCart } = useContext(GlobalContext)
 
@@ -107,7 +109,10 @@ const HomePage = () => {
 
             {restaurantList.length === 10 ? list : "Loading..."}
             <FooterSpace/>
-            <Footer/>
+            <Footer 
+            imgHome={true}
+            imgCart={false}
+            />
         </ContainerPrincipal>
     )
 };

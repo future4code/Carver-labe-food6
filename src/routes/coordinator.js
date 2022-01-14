@@ -18,6 +18,10 @@ export const goToProfile = (history) => {
     history.push("/profile")
 };
 
+export const goToProfileEdit = (history) => {
+    history.push("/profile/edit")
+};
+
 export const goToCart = (history) => {
     history.push("/cart")
 };

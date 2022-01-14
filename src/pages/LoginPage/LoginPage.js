@@ -4,8 +4,10 @@ import Logo from '../../assets/img/logo-4Future.png';
 import { goToSignUp } from "../../routes/coordinator";
 import LoginForm from "./LoginForm";
 import { ScreenContainer, LogoImage, SignUpContainer, ClickToSignUp, P } from "./styled";
+import useUnprotectedPage from "../../hooks/useUnprotected"
 
 const LoginPage = () => {
+  useUnprotectedPage()
   const history = useHistory();
   return (
     <ScreenContainer>
