@@ -21,7 +21,7 @@ export const Login = (body, history) => {
             localStorage.setItem('token', response.data.token)
             userData = response.data.user.hasAddress
 
-            alert("login realizado com sucesso!")
+            
             if (userData === false) {
                 goToAddress(history)
             } else {
@@ -47,7 +47,6 @@ export const signUp = (body, history) => {
         )
         .then((response) => {
             localStorage.setItem('token', response.data.token)
-            alert("Cadastro realizado com sucesso!")
             goToHome(history)
 
         })
@@ -70,7 +69,6 @@ export const AddAddress = (body, history) => {
         )
         .then((response) => {
             localStorage.setItem('token', response.data.token)
-            alert("Cadastro realizado com sucesso!")
             goToHome(history)
 
         })
@@ -108,9 +106,6 @@ export const PlaceOrder = (body2, id, history, setCart, setOrderActive, payment)
         paymentMethod: payment
     }
 
-    console.log(payment)
-    console.log(id)
-    console.log(body)
 
     axios
         .post(`${BASE_URL}/restaurants/${id}/order`, body,
@@ -122,7 +117,6 @@ export const PlaceOrder = (body2, id, history, setCart, setOrderActive, payment)
             }
         )
         .then((response) => {
-            alert("Pedido realizado com sucesso!")
             goToHome(history)
             setCart([])
             setOrderActive(true)
@@ -157,7 +151,7 @@ export const UseRequestProf = (initialState) => {
 
             })
             .catch((error) => {
-                // alert(error)
+                
 
             });
 
@@ -194,7 +188,7 @@ export const UseOrderHitory = (initialState) => {
 
             })
             .catch((error) => {
-                // alert(error)
+                
 
             });
 

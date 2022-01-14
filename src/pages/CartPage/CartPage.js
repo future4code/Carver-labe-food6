@@ -54,7 +54,7 @@ const CartPage = () => {
                 setOrder(products)
                 
             })
-            console.log("payment", payment)
+            
             
             PlaceOrder(products, restId, history, setCart, setOrderActive, payment)
 
@@ -79,7 +79,7 @@ const CartPage = () => {
             setPayment(money)
             // setStatePayment()
             update()
-            console.log(payment)
+            
         }
 
         const aux2 = () =>{
@@ -87,22 +87,8 @@ const CartPage = () => {
             setMoneyCheck(false)
             setPayment(card)
             update()
-            console.log(payment)
+          
         }
-        console.log(payment)
-
-        // const setStatePayment = () =>{
-        //     if(payment === money){
-        //         setMoneyCheck(true)
-        //         setCardCheck(false)
-        //     }else if(payment === card){
-        //         setCardCheck(true)
-        //         setMoneyCheck(false)
-        //     }else {
-        //         setCardCheck(false)
-        //         setMoneyCheck(false)
-        //     }
-        // }
 
         
 

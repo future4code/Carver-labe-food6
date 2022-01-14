@@ -55,7 +55,9 @@ const GlobalState = (props) => {
                     
                    
                 })
-                .catch((error)=> console.log("deu ruim"))
+                .catch((error)=>{
+
+                })
         })
     }, [restName])
 
@@ -76,7 +78,9 @@ const GlobalState = (props) => {
                 setRestName(response.data.restaurants)
                 
             })
-            .catch((error) => console.log("deu ruim"))
+            .catch((error)=>{
+
+            }) 
     }
 
     const data = {

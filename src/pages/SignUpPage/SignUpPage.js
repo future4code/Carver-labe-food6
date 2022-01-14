@@ -88,6 +88,7 @@ const SingUpPage = () => {
               value={form.password}
               onChange={handleInputChange}
               id={"s1"}
+              pattern={"^.{6,30}$"}
               required
             />
           </fieldset>
@@ -102,6 +103,7 @@ const SingUpPage = () => {
               value={form3.password2}
               onChange={handleInputChange2}
               id={"s2"}
+              pattern={"^.{6,30}$"}
               required
             />
           </fieldset>

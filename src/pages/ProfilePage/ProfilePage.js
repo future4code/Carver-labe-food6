@@ -16,7 +16,7 @@ const ProfilePage = () => {
     const history = useHistory()
 
     setUserProfile(data)
-    console.log(data2)
+    
 
     const prof = data !== undefined ? userProfile : "Loading..."
 
