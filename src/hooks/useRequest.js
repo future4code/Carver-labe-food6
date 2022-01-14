@@ -3,8 +3,77 @@ import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { BASE_URL } from "../constants/urls";
 import { goToAddress, goToHome } from "../routes/coordinator";
+import GlobalContext from "../Global/GlobalContext";
 
+export const useRequest = () =>{
+    const { restaurantList, setReastaurantList, restName, setRestName, cart, setCart } = useContext(GlobalContext)
+    const [data, setData] = useState([])
+    const [data2, setData2] = useState([])
 
+    
+
+    useEffect(() => {
+        const newList = []
+        
+        restName.forEach((item) => {
+            axios
+                .get(`${BASE_URL}/restaurants/${item.id}`,
+                    {
+                        headers: {
+                            auth: localStorage.getItem("token"),
+                            contentType: "application/json"
+                        }
+                    }
+                )
+                .then((response)=>{
+                    const newList2 = {...response.data.restaurant}
+                    newList.push(newList2)
+                    
+                    if (newList.length === 10) {
+                        const newList3 = newList.sort((a, b) => {
+                            return a.id - b.id
+                        })
+                        setReastaurantList(newList3)
+                        setData(restaurantList)
+                    }
+
+                    
+                   
+                })
+                .catch((error)=>{
+
+                })
+        })
+    }, [restName])
+
+    const getRestaurant = ()=>{
+
+        axios.
+            get(`${BASE_URL}/restaurants`,
+                {
+                    headers: {
+                        auth: localStorage.getItem("token"),
+                        contentType: "application/json"
+                    }
+                }
+            )
+            .then((response) => {
+                setRestName(response.data.restaurants)
+                setData2(restName)
+                
+            })
+            .catch((error)=>{
+
+            }) 
+    }
+
+    useEffect(()=>{
+        getRestaurant()
+    }, [])
+
+    return [data, data2]
+
+}
 
 export const Login = (body, history) => {
     let userData = {}
