@@ -7,6 +7,7 @@ import { goToAddress, goToHome, goToProfile, goToProfileEdit } from "../../route
 import { useHistory } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import useProtectedPage from "../../hooks/useProtected";
+import Footer from "../../components/Footer/Footer";
 
 const ProfilePage = () => {
     useProtectedPage()
@@ -80,7 +81,11 @@ const ProfilePage = () => {
             </div>
 
 
-
+            <Footer
+        imgCart={false}
+        imgHome={false}
+        imgProfile={true}
+        />
         </ContainerPrincipal>
     )
 };

@@ -5,6 +5,7 @@ import HomeIcon from '../../assets/img/homepage-nonActive.png';
 import HomeIconActive from '../../assets/img/homepage.png';
 import CartIcon from '../../assets/img/shopping-cart.png';
 import CartIconActive from '../../assets/img/shopping-cart-active.png'
+import PerfilIconActive from '../../assets/img/avatarVerm.png';
 import { goToHome } from "../../routes/coordinator";
 import { goToCart} from "../../routes/coordinator";
 import { goToProfile } from "../../routes/coordinator";
@@ -17,7 +18,7 @@ return(
     <MainContainer>
         <button onClick={()=>goToHome(history)} > {props.imgHome ? <img src={HomeIconActive} alt="icone de home"/> : <img src={HomeIcon} alt="icone de home"/>} </button>
         <button onClick={()=>goToCart(history)} > {props.imgCart ? <img src={CartIconActive} alt="icone de carrinho"/> : <img src={CartIcon} alt="icone de carrinho"/>} </button>
-        <button onClick={()=>goToProfile(history)} > <img src={PerfilIcon} alt="icone de perfil"/> </button>
+        <button onClick={()=>goToProfile(history)} > {props.imgProfile ? <img src={PerfilIconActive} alt="icone de perfil"/> : <img src={PerfilIcon} alt="icone de perfil"/>} </button>
     </MainContainer>
 )
 }

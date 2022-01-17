@@ -108,6 +108,7 @@ return (
         <Footer
         imgCart={true}
         imgHome={false}
+        imgProfile={false}
         />
     </div>
     

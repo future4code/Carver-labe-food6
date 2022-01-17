@@ -5,7 +5,7 @@ import { signUp } from "../../hooks/useRequest";
 import { useState } from "react";
 import { ScreenContainer, ButtonForm } from "./Styled"
 import Logo from '../../assets/img/logo-4Future.png';
-import Header from "../../components/Header/Header"
+import Header from "../../components/Header/Header";
 
 const SingUpPage = () => {
   const [form, handleInputChange] = useForm({
@@ -33,9 +33,11 @@ const SingUpPage = () => {
 
   return (
     <ScreenContainer>
-      <Header/>
       {/* <div class="bar"></div> */}
-
+      <Header
+                state={5}
+                back={history.goBack}
+            />
       <img src={Logo} alt="Logo FourFood" />
       <p> Cadastrar </p>
       <form onSubmit={sendForm}>
