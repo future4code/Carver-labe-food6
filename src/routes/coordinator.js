@@ -1,5 +1,5 @@
 export const goToLogin = (history) => {
-    history.push("/login")
+    history.push("/")
 };
 
 export const goToSignUp = (history) => {
@@ -7,7 +7,7 @@ export const goToSignUp = (history) => {
 };
 
 export const goToHome = (history) => {
-    history.push("/")
+    history.push("/home")
 };
 
 export const goToRestaurant = (history) => {

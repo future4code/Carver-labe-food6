@@ -9,6 +9,7 @@ import Footer from "../../components/Footer/Footer";
 import { FooterSpace } from "./Styled";
 import useProtectedPage from "../../hooks/useProtected";
 import { useRequest } from "../../hooks/useRequest";
+import Loading from "../../components/Loading/Loading";
 
 const HomePage = () => {
     useProtectedPage()
@@ -109,11 +110,12 @@ const HomePage = () => {
                 </NavScroll>
             {/* </div> */}
 
-            {restaurantList.length === 10 ? list : "Loading..."}
+            {restaurantList.length === 10 ? list : <Loading/>}
             <FooterSpace/>
             <Footer 
             imgHome={true}
             imgCart={false}
+            imgProfile={false}
             />
         </ContainerPrincipal>
     )
